@@ -22,7 +22,7 @@ function currentTime() {
 setInterval(currentTime, 500);
 
 let r = 255;
-let g = 0;
+let g = 222;
 let b = 0;
 let a = 0.8;
 function changeBackground() {
@@ -46,4 +46,4 @@ function changeBackground() {
     }
     document.getElementById("header").style.backgroundColor = "rgba("+r+","+g+","+b+","+a+")";
 }
-setInterval(changeBackground, 25);
+setInterval(changeBackground, 15);

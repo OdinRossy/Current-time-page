@@ -24,7 +24,7 @@ setInterval(currentTime, 500);
 let r = 255;
 let g = 222;
 let b = 0;
-let a = 0.8;
+let a = 0.7;
 function changeBackground() {
     if (r===255 && b===0) {
         g++;

@@ -30,7 +30,7 @@ let r = 255;
 let g = 222;
 let b = 0;
 let a = 0.7;
-let isChangeBackground = true;
+var isChangeBackground = true;
 
 function changeBackground() {
     if (isChangeBackground){
@@ -52,7 +52,7 @@ function changeBackground() {
         if (r===255 && g===0) {
             b--;
         }
-        document.getElementById("header").style.backgroundColor = "rgba(" + r + "," + g + "," + b + "," + a + ")";
+        document.getElementById("header--text").style.backgroundColor = "rgba(" + r + "," + g + "," + b + "," + a + ")";
     }
 }
 if (isChangeBackground){

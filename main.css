@@ -19,7 +19,8 @@ header{
     margin-right: 10%;
     border: rgba(0, 0, 0, 0.6) dashed 3px;
     border-radius: 10px;
-    background-color: rgba(255, 220, 80, 0.95);
+    background-color: rgba(255, 0, 0, 0.95);
     color: white;
     font-size: 64px;
+   /*color: rgba(0, 255, 2, 0.95)*/
 }

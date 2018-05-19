@@ -4,6 +4,11 @@ function currentTime() {
     let hours = date.getHours();
     let minutes = date.getMinutes();
     let seconds = date.getSeconds();
+    let day = date.getDay();
+    let month = date.getMonth();
+    let full = date.getFullYear();
+    console.log(day + ", " + month);
+    console.log(full);
     let htime = document.getElementById("time");
     let currentTime;
     if (seconds < 10){
@@ -25,25 +30,35 @@ let r = 255;
 let g = 222;
 let b = 0;
 let a = 0.7;
+var isChangeBackground = true;
+
 function changeBackground() {
-    if (r===255 && b===0) {
-        g++;
+    if (isChangeBackground){
+        if (r===255 && b===0) {
+            g++;
+        }
+        if (g===255 && b===0) {
+            r--;
+        }
+        if (r===0 && g===255) {
+            b++;
+        }
+        if (r===0 && b===255) {
+            g--;
+        }
+        if (g===0 && b===255) {
+            r++;
+        }
+        if (r===255 && g===0) {
+            b--;
+        }
+        document.getElementById("header").style.backgroundColor = "rgba(" + r + "," + g + "," + b + "," + a + ")";
     }
-    if (g===255 && b===0) {
-        r--;
-    }
-    if (r===0 && g===255) {
-        b++;
-    }
-    if (r===0 && b===255) {
-        g--;
-    }
-    if (g===0 && b===255) {
-        r++;
-    }
-    if (r===255 && g===0) {
-        b--;
-    }
-    document.getElementById("header").style.backgroundColor = "rgba("+r+","+g+","+b+","+a+")";
 }
-setInterval(changeBackground, 15);
+if (isChangeBackground){
+    setInterval(changeBackground, 15);
+}
+
+function blockChangeBackground() {
+    isChangeBackground = !isChangeBackground;
+}

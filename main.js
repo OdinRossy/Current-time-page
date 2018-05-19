@@ -30,7 +30,7 @@ let r = 255;
 let g = 222;
 let b = 0;
 let a = 0.7;
-var isChangeBackground = true;
+let isChangeBackground = true;
 
 function changeBackground() {
     if (isChangeBackground){

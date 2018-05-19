@@ -1,14 +1,8 @@
-
 function currentTime() {
     let date = new Date();
     let hours = date.getHours();
     let minutes = date.getMinutes();
     let seconds = date.getSeconds();
-    let day = date.getDay();
-    let month = date.getMonth();
-    let full = date.getFullYear();
-    console.log(day + ", " + month);
-    console.log(full);
     let htime = document.getElementById("time");
     let currentTime;
     if (seconds < 10){
@@ -26,13 +20,13 @@ function currentTime() {
 }
 setInterval(currentTime, 500);
 
-let r = 255;
-let g = 222;
-let b = 0;
-let a = 0.7;
-var isChangeBackground = true;
+let r = 255;    // Переменная для значения красного
+let g = 222;    // Переменная для значения зелёного
+let b = 0;      // Переменная для значения чёрного
+let a = 0.7;    // Переменная для значения прозрачности
+let isChangeBackground = true;
 
-function changeBackground() {
+function changeBackground() {   //Функция, в которой изменияем цвет фона документа
     if (isChangeBackground){
         if (r===255 && b===0) {
             g++;
@@ -52,13 +46,14 @@ function changeBackground() {
         if (r===255 && g===0) {
             b--;
         }
+        // Устанавливаем стиль backgroundColor элементу с id header--text
         document.getElementById("header--text").style.backgroundColor = "rgba(" + r + "," + g + "," + b + "," + a + ")";
     }
 }
 if (isChangeBackground){
-    setInterval(changeBackground, 15);
+    setInterval(changeBackground, 15);  //Функция setInterval запускает функцию changeBackground каждые 15 миллисекунд
 }
 
 function blockChangeBackground() {
-    isChangeBackground = !isChangeBackground;
+    isChangeBackground = !isChangeBackground;   //При вызове этой функции значение переменной isChangeBackground меняется на противоположное
 }

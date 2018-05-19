@@ -6,13 +6,13 @@ function currentTime() {
     let seconds = date.getSeconds();
     let htime = document.getElementById("time");
     let currentTime;
-    if (seconds<10){
+    if (seconds < 10){
         seconds = "0" + seconds;
     }
-    if (minutes<10){
+    if (minutes < 10){
         minutes = "0" + minutes;
     }
-    if (hours<10){
+    if (hours < 10){
         hours = "0" + hours;
     }
     currentTime = hours + ":" + minutes + ":" + seconds;

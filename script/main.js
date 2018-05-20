@@ -51,9 +51,14 @@ function changeBackground() {   //Функция, в которой измени
     }
 }
 
+let interval;
+
 function blockChangeBackground() {
     isChangeBackground = !isChangeBackground;   //При вызове этой функции значение переменной isChangeBackground меняется на противоположное
     if (isChangeBackground){
-        setInterval(changeBackground, 15);  //Функция setInterval запускает функцию changeBackground каждые 15 миллисекунд
+        interval = setInterval(changeBackground, 15);  //Функция setInterval запускает функцию changeBackground каждые 15 миллисекунд
+    }
+    else {
+        clearInterval(interval); //Очищаем интервал, если значение isChangeBackground = false
     }
 }

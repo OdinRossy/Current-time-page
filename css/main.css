@@ -6,7 +6,7 @@ body {
     text-shadow: 1px 1px 10px black;
 }
 header{
-    background: url("images/asteroids.jpg") slateblue;
+    background: url("../images/asteroids.jpg") slateblue;
     position: absolute;
     top: 0;
     left: 0;

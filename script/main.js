@@ -3,7 +3,7 @@ function currentTime() {
     let hours = date.getHours();
     let minutes = date.getMinutes();
     let seconds = date.getSeconds();
-    let htime = document.getElementById("time");
+    let time = document.getElementById("time");
     let currentTime;
     if (seconds < 10){
         seconds = "0" + seconds;
@@ -15,7 +15,7 @@ function currentTime() {
         hours = "0" + hours;
     }
     currentTime = hours + ":" + minutes + ":" + seconds;
-    htime.innerText = currentTime;
+    time.innerText = currentTime;
     // console.log(currentTime);
 }
 setInterval(currentTime, 500);
@@ -25,9 +25,20 @@ let g = 222;    // Переменная для значения зелёного
 let b = 0;      // Переменная для значения чёрного
 let a = 0.7;    // Переменная для значения прозрачности
 let isChangeBackground = false;
-
+let interval;
 let header_time = document.getElementById("header-text");
+
 header_time.addEventListener("click", blockChangeBackground);
+
+function blockChangeBackground() {
+    isChangeBackground = !isChangeBackground;   //При вызове этой функции значение переменной isChangeBackground меняется на противоположное
+    if (isChangeBackground){
+        interval = setInterval(changeBackground, 15);  //Функция setInterval запускает функцию changeBackground каждые 15 миллисекунд
+    }
+    else {
+        clearInterval(interval); //Очищаем интервал, если значение isChangeBackground = false
+    }
+}
 
 function changeBackground() {   //Функция, в которой изменияем цвет фона документа
     if (isChangeBackground){
@@ -51,17 +62,5 @@ function changeBackground() {   //Функция, в которой измени
         }
         // Устанавливаем стиль backgroundColor элементу с id header-text
         header_time.style.backgroundColor = "rgba(" + r + "," + g + "," + b + "," + a + ")";
-    }
-}
-
-let interval;
-
-function blockChangeBackground() {
-    isChangeBackground = !isChangeBackground;   //При вызове этой функции значение переменной isChangeBackground меняется на противоположное
-    if (isChangeBackground){
-        interval = setInterval(changeBackground, 15);  //Функция setInterval запускает функцию changeBackground каждые 15 миллисекунд
-    }
-    else {
-        clearInterval(interval); //Очищаем интервал, если значение isChangeBackground = false
     }
 }

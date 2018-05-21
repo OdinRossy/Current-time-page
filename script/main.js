@@ -26,6 +26,9 @@ let b = 0;      // Переменная для значения чёрного
 let a = 0.7;    // Переменная для значения прозрачности
 let isChangeBackground = false;
 
+let header_time = document.getElementById("header-text");
+header_time.addEventListener("click", blockChangeBackground);
+
 function changeBackground() {   //Функция, в которой изменияем цвет фона документа
     if (isChangeBackground){
         if (r===255 && b===0) {
@@ -46,8 +49,8 @@ function changeBackground() {   //Функция, в которой измени
         if (r===255 && g===0) {
             b--;
         }
-        // Устанавливаем стиль backgroundColor элементу с id header--text
-        document.getElementById("header--text").style.backgroundColor = "rgba(" + r + "," + g + "," + b + "," + a + ")";
+        // Устанавливаем стиль backgroundColor элементу с id header-text
+        header_time.style.backgroundColor = "rgba(" + r + "," + g + "," + b + "," + a + ")";
     }
 }
 

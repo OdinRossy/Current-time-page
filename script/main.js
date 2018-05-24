@@ -17,7 +17,7 @@ function currentTime() {
     currentTime = hours + ":" + minutes + ":" + seconds;
     time.text(currentTime);
 }
-setInterval(currentTime, 500);
+setInterval(currentTime, 1000);
 
 let r = 255;    // Переменная для значения красного
 let g = 222;    // Переменная для значения зелёного
@@ -26,7 +26,7 @@ let a = 0.0;    // Переменная для значения прозрачн
 let isChangeBackground = true;
 let interval = setInterval(changeBackground, 15);
 let header_time = $("#header-text");
-let header_color;
+let header_backgroundColor;
 
 header_time.click(function () {
     isChangeBackground = !isChangeBackground;   //При вызове этой функции значение переменной isChangeBackground меняется на противоположное
@@ -39,33 +39,28 @@ header_time.click(function () {
 });
 
 function changeBackground() {   //Функция, в которой изменияем цвет фона документа
-    if (isChangeBackground){
-        if (a<0.6){
-            a+=0.005;
-        }
-        if (r===255 && b===0) {
-            g++;
-        }
-        if (g===255 && b===0) {
-            r--;
-        }
-        if (r===0 && g===255) {
-            b++;
-        }
-        if (r===0 && b===255) {
-            g--;
-        }
-        if (g===0 && b===255) {
-            r++;
-        }
-        if (r===255 && g===0) {
-            b--;
-        }
-        // Устанавливаем стиль backgroundColor элементу с id header-text
-        header_color = "rgba(" + r + "," + g + "," + b + "," + a + ")";
-        header_time.css("background-color", header_color);
-        header_time.css("box-shadow", "0 5px 100px " + header_color)
-        // document.getElementById("header-text").style.backgroundColor = header_color;
-        // document.getElementById("header-text").style.boxShadow = header_color;
+    if (a < 0.6) {
+        a += 0.005;
     }
+    if (r === 255 && b === 0) {
+        g++;
+    }
+    if (g === 255 && b === 0) {
+        r--;
+    }
+    if (r === 0 && g === 255) {
+        b++;
+    }
+    if (r === 0 && b === 255) {
+        g--;
+    }
+    if (g === 0 && b === 255) {
+        r++;
+    }
+    if (r === 255 && g === 0) {
+        b--;
+    }
+    header_backgroundColor = "rgba(" + r + "," + g + "," + b + "," + a + ")";
+    header_time.css("background-color", header_backgroundColor);
+    header_time.css("box-shadow", "0 5px 100px " + header_backgroundColor)
 }

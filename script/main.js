@@ -24,7 +24,7 @@ let g = 222;    // Переменная для значения зелёного
 let b = 0;      // Переменная для значения чёрного
 let a = 0.0;    // Переменная для значения прозрачности
 let isChangeBackground = true;
-let interval = setInterval(changeBackground, 15);;
+let interval = setInterval(changeBackground, 15);
 let header_time = $("#header-text");
 let header_color;
 

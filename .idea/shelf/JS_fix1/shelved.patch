@@ -1,0 +1,40 @@
+Index: script/main.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>function currentTime() {\n    let date = new Date();\n    let hours = date.getHours();\n    let minutes = date.getMinutes();\n    let seconds = date.getSeconds();\n    let time = document.getElementById(\"time\");\n    let currentTime;\n    if (seconds < 10){\n        seconds = \"0\" + seconds;\n    }\n    if (minutes < 10){\n        minutes = \"0\" + minutes;\n    }\n    if (hours < 10){\n        hours = \"0\" + hours;\n    }\n    currentTime = hours + \":\" + minutes + \":\" + seconds;\n    time.innerText = currentTime;\n    // console.log(currentTime);\n}\nsetInterval(currentTime, 500);\n\nlet r = 255;    // Переменная для значения красного\nlet g = 222;    // Переменная для значения зелёного\nlet b = 0;      // Переменная для значения чёрного\nlet a = 0.7;    // Переменная для значения прозрачности\nlet isChangeBackground = false;\nlet interval;\nlet header_time = document.getElementById(\"header-text\");\n\nheader_time.addEventListener(\"click\", blockChangeBackground);\n\nfunction blockChangeBackground() {\n    isChangeBackground = !isChangeBackground;   //При вызове этой функции значение переменной isChangeBackground меняется на противоположное\n    if (isChangeBackground){\n        interval = setInterval(changeBackground, 15);  //Функция setInterval запускает функцию changeBackground каждые 15 миллисекунд\n    }\n    else {\n        clearInterval(interval); //Очищаем интервал, если значение isChangeBackground = false\n    }\n}\n\nfunction changeBackground() {   //Функция, в которой изменияем цвет фона документа\n    if (isChangeBackground){\n        if (r===255 && b===0) {\n            g++;\n        }\n        if (g===255 && b===0) {\n            r--;\n        }\n        if (r===0 && g===255) {\n            b++;\n        }\n        if (r===0 && b===255) {\n            g--;\n        }\n        if (g===0 && b===255) {\n            r++;\n        }\n        if (r===255 && g===0) {\n            b--;\n        }\n        // Устанавливаем стиль backgroundColor элементу с id header-text\n        header_time.style.backgroundColor = \"rgba(\" + r + \",\" + g + \",\" + b + \",\" + a + \")\";\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- script/main.js	(revision 2fb267120cd1e65f883f520b9ffb67e4c23f106c)
++++ script/main.js	(date 1527184030193)
+@@ -1,10 +1,13 @@
+-function currentTime() {
+-    let date = new Date();
+-    let hours = date.getHours();
+-    let minutes = date.getMinutes();
+-    let seconds = date.getSeconds();
+-    let time = document.getElementById("time");
+-    let currentTime;
++let date = new Date();
++let hours = date.getHours();
++let minutes = date.getMinutes();
++let seconds = date.getSeconds();
++let time = document.getElementById("time");
++let currentTime;
++let choiceTime = false;
++
++window.addEventListener("load", firstTime);
++function firstTime(){
+     if (seconds < 10){
+         seconds = "0" + seconds;
+     }
+@@ -60,7 +63,7 @@
+         if (r===255 && g===0) {
+             b--;
+         }
+-        // Устанавливаем стиль backgroundColor элементу с id header-text
++// Устанавливаем стиль backgroundColor элементу с id header-text
+         header_time.style.backgroundColor = "rgba(" + r + "," + g + "," + b + "," + a + ")";
+     }
+ }
+\ No newline at end of file

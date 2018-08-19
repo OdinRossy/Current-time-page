@@ -1,0 +1,45 @@
+Index: css/main.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>body {\n    font-family: \"Open Sans\", sans-serif;\n    width: 100%;\n    height: 100%;\n    text-align: center;\n    text-shadow: 1px 1px 10px black;\n}\nheader{\n    background: url(\"../images/asteroids.jpg\") slateblue;\n    position: absolute;\n    top: 0;\n    left: 0;\n    height: 100%;\n    width: 100%;\n}\n#header-text{\n    margin-top: 10%;\n    margin-left: 10%;\n    margin-right: 10%;\n    border: rgba(0, 0, 0, 0.8) dashed 3px;\n    border-radius: 15px;\n    background-color: rgba(255, 222, 0, 0.7);\n    color: white;\n    font-size: 64px;\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- css/main.css	(revision 2fb267120cd1e65f883f520b9ffb67e4c23f106c)
++++ css/main.css	(date 1526920689889)
+@@ -1,4 +1,4 @@
+-body {
++body{
+     font-family: "Open Sans", sans-serif;
+     width: 100%;
+     height: 100%;
+Index: index.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Current time</title>\n    <!--Нормализация стилей-->\n    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css\">\n    <!--Собственный стиль-->\n    <link rel=\"stylesheet\" href=\"css/main.css\">\n    <!--Подключение веб-шрифтов-->\n    <link href=\"https://fonts.googleapis.com/css?family=Lato:300,400|Open+Sans:300,400,800\" rel=\"stylesheet\">\n    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\n    <!--Подключение иконки-->\n    <link rel=\"icon\" href=\"images/favicon.png\"/>\n</head>\n<body>\n    <header>\n        <div id=\"header-text\">\n            <h1 id=\"time\" onload=\"currentTime()\">Loading..</h1>\n        </div>\n    </header>\n    <script src=\"script/main.js\"></script>\n</body>\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- index.html	(revision 2fb267120cd1e65f883f520b9ffb67e4c23f106c)
++++ index.html	(date 1526923333285)
+@@ -9,16 +9,16 @@
+     <link rel="stylesheet" href="css/main.css">
+     <!--Подключение веб-шрифтов-->
+     <link href="https://fonts.googleapis.com/css?family=Lato:300,400|Open+Sans:300,400,800" rel="stylesheet">
+-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+     <!--Подключение иконки-->
+     <link rel="icon" href="images/favicon.png"/>
+ </head>
+ <body>
+     <header>
+         <div id="header-text">
+-            <h1 id="time" onload="currentTime()">Loading..</h1>
++            <h1 id="time">Loading..</h1>
+         </div>
+     </header>
+-    <script src="script/main.js"></script>
++    <!--Поключение js-->
++    <script src="script/main.js"></script> 
+ </body>
+ </html>
+\ No newline at end of file

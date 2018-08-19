@@ -1,2 +1,4 @@
 # Current-time-page
-Just a page with current time
+This is a sipmle page that shows you current time with beautiful changing colors.
+
+remniov.work@gmail.com

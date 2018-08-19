@@ -62,6 +62,6 @@ $(function() {
         }
         header_backgroundColor = "rgba(" + r + "," + g + "," + b + "," + a + ")";
         header_time.css("background-color", header_backgroundColor);
-        header_time.css("box-shadow", "0 5px 100px " + header_backgroundColor)
+        header_time.css("box-shadow", "0 5px 100px " + header_backgroundColor);
     }
 });
